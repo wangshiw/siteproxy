@@ -58,7 +58,7 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
       "description": "注意:token_prefix相当于网站密码，请谨慎设置。 proxy_url和token_prefix合起来就是访问网址。"
    }
 7. 执行:node bundle.js
-8. 现在就可以在浏览器中访问你的域名了.
+8. 现在就可以在浏览器中访问你的域名了, 网址就是前面的proxy_url加上token_prefix.
 9. 如果想套CloudFlare加速, 可以参考CloudFlare说明
 ```
 ### cloudflare_worker_deployment
@@ -81,7 +81,7 @@ Not supported yet for siteproxy2.0
       "description": "Note: token_prefix acts as the website password, please set it carefully. proxy_url and token_prefix together form the access URL." 
    }
 7. Execute: node bundle.js
-8. Now you can access your domain in the browser.
+8. Now you can access your domain in the browser, address is actually proxy_url+token_prefix.
 9. If you want to use CloudFlare for acceleration, you can refer to CloudFlare's documentation.
 ```
 ### 联系方式
