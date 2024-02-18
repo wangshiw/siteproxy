@@ -24,6 +24,8 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
 - [联系方式](#联系方式)
 
 ### 特点
+- 支持密码控制代理，知道密码才能访问代理。
+- 不需要客户端的任何配置，访问代理网址即可访问全世界。
 - enter siteproxy's address, and go surf on internet without censorship
 - no proxy setting from client side is needed. zero configuration from client browser
 
