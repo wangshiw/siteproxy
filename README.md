@@ -1,6 +1,6 @@
 # siteproxy 2.0
 Siteproxy 2.0 使用了service worker, 使得代理更加稳定, 可以代理了的网站更多。
-反向代理, 免翻墙访问youtube/google.
+反向代理, 免翻墙访问youtube/google, 支持telegram web登录。
 pure web page proxy to google/youtube, zero configuration from client side. Reverse proxy to all internet. 一键部署，翻墙利器。
 
 ```
@@ -26,6 +26,7 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
 ### 特点
 - 支持密码控制代理，知道密码才能访问代理。
 - 不需要客户端的任何配置，访问代理网址即可访问全世界。
+- 支持telegram web登录。
 - enter siteproxy's address, and go surf on internet without censorship
 - no proxy setting from client side is needed. zero configuration from client browser
 
