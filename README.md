@@ -47,7 +47,7 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
         proxy_pass       http://localhost:5006;
       }
    }
-2. 执行:sudo systecmctl start nginx
+2. 执行:sudo systecmctl restart nginx
 3. 用户环境下执行下列命令安装node环境, 如果你已经有node环境, 忽略这一步
    (1)curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
    (2)source ~/.bashrc
@@ -60,7 +60,7 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
       "token_prefix": "/user-SetYourPasswordHere/",  // 这个实际上是你的网站密码，用来防止非法访问
       "description": "注意:token_prefix相当于网站密码，请谨慎设置。 proxy_url和token_prefix合起来就是访问网址。"
    }
-7. 执行:node bundle.js
+7. 执行:nohup node bundle.js &
 8. 现在就可以在浏览器中访问你的域名了, 网址就是前面的proxy_url加上token_prefix.
 9. 如果想套CloudFlare加速, 可以参考CloudFlare说明
 ```
