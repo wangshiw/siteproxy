@@ -1,7 +1,7 @@
 # siteproxy 2.0
 Siteproxy 2.0 使用了service worker, 使得代理更加稳定, 可以代理了的网站更多。
-同时使用hono替代express，速度提高4倍。 
-反向代理, 免翻墙访问youtube/google, 支持telegram web登录。
+同时使用hono替代express，速度提高4倍。 支持cloudflare worker部署。
+反向代理, 免翻墙访问youtube/google, 支持github和telegram web登录。
 pure web page proxy to google/youtube, zero configuration from client side. Reverse proxy to all internet. 一键部署，翻墙利器。
 
 ```
@@ -26,6 +26,7 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
 
 ### 特点
 - 使用hono替代express，速度提高4倍。 
+- 支持cloudflare worker部署。
 - 支持密码控制代理，知道密码才能访问代理。
 - 不需要客户端的任何配置，访问代理网址即可访问全世界。
 - 支持telegram web登录。
@@ -33,7 +34,15 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
 - no proxy setting from client side is needed. zero configuration from client browser
 
 ### 部署到cloudflare_worker
-注意：siteproxy 2.0尚未支持cloudflare部署。
+```
+1. 假设你的域名已经管理在cloudflare名下, 并设置你的代理网站域名的DNS到任意ip， 比如1.1.1.1
+2. git clone本项目，并使用文本编辑器打开build/worker.js
+3. 搜索http://localhost:5006字符串，将它替换为你的代理网站域名，比如https://your-proxy-domain.name
+   同时搜索user22334455,将其修改为你自己想设置的密码。
+4. 创建一个worker，并编辑worker，将上一步编辑过的worker.js拷贝粘贴到worker里面，保存部署。
+5. 增加一个worker路由， 将your-proxy-domain.name/* 指向刚刚保存的worker。
+5. 现在可以直接访问https://your-proxy-domain.name/user-your-password/, 就可以了。注意这里的域名和密码替换为你自己的域名和密码。
+```
 
 ### 部署到vps或者云服务器
 ```
@@ -67,7 +76,14 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
 9. 如果想套CloudFlare加速, 可以参考CloudFlare说明
 ```
 ### cloudflare_worker_deployment
-Not supported yet for siteproxy2.0
+```
+1. Assume your domain is already managed under Cloudflare, and set the DNS of your proxy website's domain to any IP, such as 1.1.1.1.
+2. Git clone this project, and use a text editor to open build/worker.js.
+3. Search for the string http://localhost:5006 and replace it with your proxy website's domain, for example, https://your-proxy-domain.name. Also, search for user22334455 and change it to the password you want to set.
+4. Create a worker, edit the worker, and copy and paste the edited worker.js from the previous step into the worker, then save and deploy.
+5. Add a worker route, directing your-proxy-domain.name/* to the worker you just saved.
+6. Now you can directly visit https://your-proxy-domain.name/user-your-password/, and it should work. Note to replace the domain and password with your own.
+```
 
 ### vps_deployment
 ```
