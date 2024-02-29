@@ -35,7 +35,7 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
 
 ### 部署到cloudflare_worker
 ```
-1. 假设你的域名已经管理在cloudflare名下, 并设置你的代理网站域名的DNS到任意ip， 比如1.1.1.1
+1. 假设你的域名已经管理在cloudflare名下, 并设置你的代理网站域名的DNS到任意ip， 比如192.0.2.2, 注意使能代理，确保代理状态是：已代理。
 2. git clone本项目，并使用文本编辑器打开build/worker.js (不用git clone,直接下载这个文件也可以)
 3. 搜索http://localhost:5006字符串，将它替换为你的代理网站域名，比如https://your-proxy-domain.name
    同时搜索user22334455,将其修改为你自己想设置的密码。
